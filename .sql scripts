@@ -1,0 +1,51 @@
+-- QUERY - 1
+SELECT COUNT(*) AS NumberOfSuppliers
+FROM Suppliers;
+
+
+-- QUERY - 2
+SELECT SUM(Salary) AS TotalSalaries
+FROM Employees;
+
+
+-- QUERY - 3
+SELECT MIN(UnitPrice) AS CheapestPrice
+FROM Products;
+
+
+-- QUERY - 4
+SELECT AVG(UnitPrice) AS AveragePrice
+FROM Products;
+
+
+-- QUERY - 5
+SELECT MAX(UnitPrice) AS MostExpensivePrice
+FROM Products;
+
+
+-- QUERY - 6
+SELECT SupplierID, COUNT(*) AS NumberOfItemsSupplied
+FROM Products
+GROUP BY SupplierID;
+
+
+-- QUERY - 7
+SELECT CategoryID, AVG(UnitPrice) AS AveragePrice
+FROM Products
+GROUP BY CategoryID;
+
+
+-- QUERY - 8
+SELECT SupplierID, COUNT(*) AS NumberOfItemsSupplied
+FROM Products
+GROUP BY SupplierID
+HAVING COUNT(*) >= 5;
+
+
+-- QUERY - 9
+SELECT ProductID,
+       ProductName,
+       UnitPrice * UnitsInStock AS InventoryValue
+FROM Products
+ORDER BY InventoryValue DESC, ProductName ASC;
+
